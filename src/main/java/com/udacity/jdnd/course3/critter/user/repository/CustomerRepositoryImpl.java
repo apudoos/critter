@@ -67,14 +67,13 @@ public class CustomerRepositoryImpl implements CustomerRepository {
 
                         if (petRow == 0) {
                             customerData.add(tempCustomerData);
-                            System.out.println(customerData.get(custRow).toString());
+
                         } else if (tempCustomerData.getId() != customerData.get(custRow).getId()) {
-                            System.out.println(tempCustomerData.getId() + " " + customerData.get(custRow).getId());
+
                             customerData.get(custRow).setPetIds(petData.stream().collect(Collectors.toList()));
                             petData.clear();
                             customerData.add(tempCustomerData);
-                            //tempCustomerData = null;
-                            System.out.println(customerData.get(custRow).toString());
+
                             custRow++;
                         }
                         petData.add(petDataRowMapper.mapRow(resultSet, petRow++).getPetId());
@@ -111,14 +110,13 @@ public class CustomerRepositoryImpl implements CustomerRepository {
 
                         if (petRow == 0) {
                             customerData.add(tempCustomerData);
-                            System.out.println(customerData.get(custRow).toString());
+
                         } else if (tempCustomerData.getId() != customerData.get(custRow).getId()) {
-                            System.out.println(tempCustomerData.getId() + " " + customerData.get(custRow).getId());
+
                             customerData.get(custRow).setPetIds(petData.stream().collect(Collectors.toList()));
                             petData.clear();
                             customerData.add(tempCustomerData);
-                            //tempCustomerData = null;
-                            System.out.println(customerData.get(custRow).toString());
+
                             custRow++;
                         }
                         petData.add(petDataRowMapper.mapRow(resultSet, petRow++).getPetId());

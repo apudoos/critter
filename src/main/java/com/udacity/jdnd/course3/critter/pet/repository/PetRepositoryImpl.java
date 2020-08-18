@@ -57,7 +57,6 @@ public class PetRepositoryImpl implements PetRepositoryDAO {
     @Override
     public Long addAPet(PetData petData) {
         BeanPropertySqlParameterSource parameterSource = new BeanPropertySqlParameterSource(petData);
-        //parameterSource.registerSqlType("type", Types.VARCHAR);
         KeyHolder key = new GeneratedKeyHolder();
         namedParameterJdbcTemplate.update(INSERT_PETS,
                 parameterSource,

@@ -49,14 +49,4 @@ public class ScheduleDTO {
         this.activities = activities;
     }
 
-    @Override
-    public String toString() {
-        return "ScheduleDTO{" +
-                "id=" + id +
-                ", employeeIds=" + employeeIds +
-                ", petIds=" + petIds +
-                ", date=" + date +
-                ", activities=" + activities +
-                '}';
-    }
 }
