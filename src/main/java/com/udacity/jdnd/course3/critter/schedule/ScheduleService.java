@@ -46,6 +46,36 @@ public class ScheduleService {
 
     }
 
+    public List<ScheduleDTO> getScheduleForPet( Long petId) {
+        //Find and return the schedule
+        List<Schedule> scheduleList = scheduleRepository.findScheduleByPetsId(petId);
+        List<ScheduleDTO> scheduleDTOS = new ArrayList<>();
+        for(Schedule sc: scheduleList) {
+            scheduleDTOS.add(convertScheduleToScheduleDTO(sc));
+        }
+        return scheduleDTOS;
+    }
+
+    public List<ScheduleDTO> getScheduleForEmployee( Long employeeId) {
+        //Find and return the schedule
+        List<Schedule> scheduleList = scheduleRepository.findScheduleByEmployeeId(employeeId);
+        List<ScheduleDTO> scheduleDTOS = new ArrayList<>();
+        for(Schedule sc: scheduleList) {
+            scheduleDTOS.add(convertScheduleToScheduleDTO(sc));
+        }
+        return scheduleDTOS;
+    }
+
+    public List<ScheduleDTO> getScheduleForCustomer(long customerId) {
+        //Find and return the schedule
+        List<Schedule> scheduleList = scheduleRepository.findScheduleForCustomerId(customerId);
+        List<ScheduleDTO> scheduleDTOS = new ArrayList<>();
+        for(Schedule sc: scheduleList) {
+            scheduleDTOS.add(convertScheduleToScheduleDTO(sc));
+        }
+        return scheduleDTOS;
+    }
+
     private Schedule convertScheduleDTOToSchedule(ScheduleDTO scheduleDTO) {
         Schedule schedule = new Schedule();
         BeanUtils.copyProperties(scheduleDTO, schedule);
@@ -60,18 +90,6 @@ public class ScheduleService {
     }
 
 
-    public List<ScheduleDTO> getScheduleForPet( long petId) {
-        throw new UnsupportedOperationException();
-    }
 
-
-    public List<ScheduleDTO> getScheduleForEmployee(long employeeId) {
-        throw new UnsupportedOperationException();
-    }
-
-
-    public List<ScheduleDTO> getScheduleForCustomer(long customerId) {
-        throw new UnsupportedOperationException();
-    }
 
 }

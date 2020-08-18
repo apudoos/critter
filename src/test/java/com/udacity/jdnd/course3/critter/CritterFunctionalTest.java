@@ -198,6 +198,9 @@ public class CritterFunctionalTest {
         ScheduleDTO sched1 = populateSchedule(1, 2, LocalDate.of(2019, 12, 25), Sets.newHashSet(EmployeeSkill.FEEDING, EmployeeSkill.WALKING));
         ScheduleDTO sched2 = populateSchedule(3, 1, LocalDate.of(2019, 12, 26), Sets.newHashSet(EmployeeSkill.PETTING));
 
+        System.out.println("Schedule 1: " + sched1);
+        System.out.println("Schedule 2: " + sched2);
+
         //add a third schedule that shares some employees and pets with the other schedules
         ScheduleDTO sched3 = new ScheduleDTO();
         sched3.setEmployeeIds(sched1.getEmployeeIds());
@@ -205,6 +208,8 @@ public class CritterFunctionalTest {
         sched3.setActivities(Sets.newHashSet(EmployeeSkill.SHAVING, EmployeeSkill.PETTING));
         sched3.setDate(LocalDate.of(2020, 3, 23));
         scheduleController.createSchedule(sched3);
+
+        System.out.println("Schedule 3: " + sched3);
 
         /*
             We now have 3 schedule entries. The third schedule entry has the same employees as the 1st schedule

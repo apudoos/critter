@@ -6,12 +6,10 @@ import java.util.List;
 
 public interface ScheduleRepository {
     Long createSchedule(Schedule schedule);
-    public List<Schedule> findAllSchedules();
-    public List<Schedule> findScheduleById(Long id);
-    //Schedule findScheduleById(Long Id);
-    //List<Schedule> findAllSchedules();
-    //List<ScheduleActivity> findAllScheduledActivity();
-    //List<SchedulePets> findAllScheduledPets();
-    //List<ScheduleEmployee> findAllScheduledEmployees();
+    List<Schedule> findAllSchedules();
+    List<Schedule> findScheduleById(Long id);
+    List<Schedule> findScheduleByPetsId(Long id);
+    List<Schedule> findScheduleByEmployeeId(Long id);
+    List<Schedule> findScheduleForCustomerId(Long id);
 
 }
