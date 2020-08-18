@@ -14,6 +14,7 @@ public class PetService {
     @Autowired
     PetRepositoryDAO petRepositoryDAO;
 
+    //Save a pet
     public PetDTO savePet(PetDTO petDTO) {
         PetData petData = convertPetDTOToPetData(petDTO);
         Long id = petRepositoryDAO.addAPet(petData);
@@ -21,11 +22,13 @@ public class PetService {
         return convertPetDataToPetDTO(storedPet.get(0));
     }
 
+    //Get a pet by id
     public PetDTO getPet(long petId) {
         List<PetData> storedPet = petRepositoryDAO.findPetById(petId);
         return convertPetDataToPetDTO(storedPet.get(0));
     }
 
+    //Get all pets
     public List<PetDTO> getPets() {
         List<PetData> storedPet = petRepositoryDAO.findAllPets();
         List<PetDTO> petDTO = new ArrayList<>();
@@ -36,6 +39,7 @@ public class PetService {
     }
 
 
+    //Get pets by owner id
     public List<PetDTO> getPetsByOwner(long ownerId) {
         List<PetData> storedPet = petRepositoryDAO.findPetsByOwner(ownerId);
         List<PetDTO> petDTO = new ArrayList<>();

@@ -2,6 +2,7 @@ package com.udacity.jdnd.course3.critter.user.data;
 
 import java.util.List;
 
+//Simple class to get customer and pet Id.
 public class CustomerData {
     Long id;
     String name;

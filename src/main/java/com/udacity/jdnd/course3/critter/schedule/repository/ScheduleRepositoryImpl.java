@@ -12,6 +12,7 @@ import org.springframework.jdbc.support.GeneratedKeyHolder;
 import org.springframework.jdbc.support.KeyHolder;
 import org.springframework.stereotype.Repository;
 
+import javax.transaction.Transactional;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -19,6 +20,7 @@ import java.util.Set;
 import java.util.stream.Collectors;
 
 @Repository
+@Transactional
 public class ScheduleRepositoryImpl implements ScheduleRepository {
     @Autowired
     NamedParameterJdbcTemplate jdbcTemplate;

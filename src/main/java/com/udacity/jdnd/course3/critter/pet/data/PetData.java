@@ -2,6 +2,7 @@ package com.udacity.jdnd.course3.critter.pet.data;
 
 import java.time.LocalDate;
 
+//Used jdbcTemplate to retrieve pet data. Pet data is a simple class. So decided to use jdbcTemplate.
 public class PetData {
     private Long petId;
     private String type;
@@ -9,6 +10,18 @@ public class PetData {
     private Long ownerId;
     private LocalDate birthDate;
     private String notes;
+
+    public PetData() {
+    }
+
+    public PetData(Long petId, String type, String name, Long ownerId, LocalDate birthDate, String notes) {
+        this.petId = petId;
+        this.type = type;
+        this.name = name;
+        this.ownerId = ownerId;
+        this.birthDate = birthDate;
+        this.notes = notes;
+    }
 
     public Long getPetId() {
         return petId;

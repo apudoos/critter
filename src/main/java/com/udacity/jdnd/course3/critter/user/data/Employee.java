@@ -6,6 +6,9 @@ import javax.persistence.*;
 import java.time.DayOfWeek;
 import java.util.Set;
 
+//This Entity uses Spring Data to retrieve the data from the Employee table.
+//Uses EmployeeSkill and DayOfWeek as @ElementCollection.
+
 @Entity
 @Table(name="Employee")
 public class Employee {

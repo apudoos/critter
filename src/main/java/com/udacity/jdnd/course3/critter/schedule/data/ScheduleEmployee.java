@@ -1,5 +1,7 @@
 package com.udacity.jdnd.course3.critter.schedule.data;
 
+//Contains schedule of employee
+//Uses jdbcTemplate due to the complexity of data.
 public class ScheduleEmployee {
 
     Long ScheduleId;

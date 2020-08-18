@@ -1,5 +1,7 @@
 package com.udacity.jdnd.course3.critter.schedule.data;
 
+//Contains activity which are scheduled for a day.
+//Uses jdbcTemplate due to the complexity of data.
 public class ScheduleActivity {
     Long scheduleId;
     String activity;

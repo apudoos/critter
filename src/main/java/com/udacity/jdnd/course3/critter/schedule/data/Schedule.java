@@ -6,6 +6,8 @@ import java.time.LocalDate;
 import java.util.List;
 import java.util.Set;
 
+//Contains the schedule details.
+//Uses jdbcTemplate due to the complexity of the data.
 public class Schedule {
     private long id;
     private List<Long> employeeIds;

@@ -1,5 +1,7 @@
 package com.udacity.jdnd.course3.critter.schedule.data;
 
+//Contains the schedule of a pet
+//Uses jdbcTemplate due to the complexity of data.
 public class SchedulePets {
 
     Long ScheduleId;

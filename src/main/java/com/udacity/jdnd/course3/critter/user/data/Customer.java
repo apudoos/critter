@@ -1,5 +1,7 @@
 package com.udacity.jdnd.course3.critter.user.data;
 
+//This contains the Customer data.
+//Uses jdbcTemplate due to the complexity of data.
 public class Customer {
     Long id;
     String name;
